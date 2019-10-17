@@ -2,9 +2,9 @@ package com.jiujiuhouse.huser.wxmini.controller;
 
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.constant.WxMaConstants;
-import com.github.binarywang.demo.wx.miniapp.config.WxMaConfiguration;
 import com.google.common.collect.Lists;
 import com.google.common.io.Files;
+import com.jiujiuhouse.huser.wxmini.config.WxMaConfiguration;
 import me.chanjar.weixin.common.bean.result.WxMediaUploadResult;
 import me.chanjar.weixin.common.error.WxErrorException;
 import org.slf4j.Logger;
