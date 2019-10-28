@@ -4,7 +4,7 @@ pipeline {
     stage('检出') {
       steps {
         checkout([$class: 'GitSCM', branches: [[name: env.GIT_BUILD_REF]], 
-                                                                                                                                                            userRemoteConfigs: [[url: env.GIT_REPO_URL, credentialsId: env.CREDENTIALS_ID]]])
+                                                                                                                                                                    userRemoteConfigs: [[url: env.GIT_REPO_URL, credentialsId: env.CREDENTIALS_ID]]])
       }
     }
     stage('编译') {
@@ -16,14 +16,19 @@ pipeline {
       steps {
         sh "docker build -t ${TKE_REPO}:${env.GIT_BUILD_REF} ."
         sh "docker tag ${TKE_REPO}:${env.GIT_BUILD_REF} ${ARTIFACT_IMAGE}:latest"
-        sh "docker push ${ARTIFACT_IMAGE}:latest"
+        sh "docker tag ${TKE_REPO}:${env.GIT_BUILD_REF} ${TKE_REPO}:latest"
       }
     }
-    stage('推送到制品库') {
+    stage('推送到ccr制品库') {
       steps {
         sh 'docker login -u 100000778480 -p Zzh320281 ccr.ccs.tencentyun.com'
-        sh "docker tag ${TKE_REPO}:${env.GIT_BUILD_REF} ${TKE_REPO}:latest"
         sh "docker push ${TKE_REPO}:latest"
+      }
+    }
+    stage('推送到code.net制品库') {
+      steps {
+        sh "docker login -u LJUUQddXzI -p PPNN13%y jiujiuhouse-docker.pkg.coding.net"
+        sh "docker push ${ARTIFACT_IMAGE}:latest"
       }
     }
   }
