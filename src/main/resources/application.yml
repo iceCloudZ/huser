@@ -3,6 +3,8 @@ spring:
     name: huser
 server:
   port: 8081
+  servlet:
+    context-path: /huser
 wx:
   miniapp:
     configs:
@@ -12,15 +14,15 @@ wx:
         aesKey: vhcC5TMpvGnkiUnbjTcHCtmWsL2CZRbstguiKGV2WYb #微信小程序消息服务器配置的EncodingAESKey
         msgDataFormat: JSON
 datasource:
-  url : jdbc:postgresql://111.231.54.43:5432/postgres
-  username : postgres
-  password : postgres
-  driverClassName : org.postgresql.Driver
-  initialization-mode : always
+  url: jdbc:postgresql://111.231.54.43:5432/postgres
+  username: postgres
+  password: postgres
+  driverClassName: org.postgresql.Driver
+  initialization-mode: always
 jpa:
-  show-sql : true
+  show-sql: true
   hibernate:
-    ddl-auto : create
+    ddl-auto: create
   properties:
     hibernate:
       temp:
