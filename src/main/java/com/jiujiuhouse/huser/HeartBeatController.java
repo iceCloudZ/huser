@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class HeartBeatController {
 
-    @GetMapping("/heartBeat")
+    @GetMapping("/health")
     public String HeartBeat() {
         log.info("HeartBeating");
-        return "HeartBeating";
+        return "health";
     }
 }
