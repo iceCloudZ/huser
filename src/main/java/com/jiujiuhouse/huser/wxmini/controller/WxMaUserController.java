@@ -60,13 +60,13 @@ public class WxMaUserController {
      * </pre>
      */
     @GetMapping("/info")
-    public String info(String sessionKey,String signature, String rawData, String encryptedData, String iv) {
+    public String info(String sessionKey, String signature, String rawData, String encryptedData, String iv) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         // 用户信息校验
-        if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
-            return "user check failed";
-        }
+//        if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
+//            return "user check failed";
+//        }
 
         // 解密用户信息
         WxMaUserInfo userInfo = wxService.getUserService().getUserInfo(sessionKey, encryptedData, iv);
@@ -80,8 +80,7 @@ public class WxMaUserController {
      * </pre>
      */
     @GetMapping("/phone")
-    public String phone(@PathVariable String appid, String sessionKey, String signature,
-                        String rawData, String encryptedData, String iv) {
+    public String phone(String sessionKey, String signature,String rawData, String encryptedData, String iv) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         // 用户信息校验
