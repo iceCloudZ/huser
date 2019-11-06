@@ -10,10 +10,13 @@ import me.chanjar.weixin.common.error.WxErrorException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.PostConstruct;
 
 /**
  * 微信小程序用户接口
@@ -21,15 +24,18 @@ import org.springframework.web.bind.annotation.RestController;
  * @author <a href="https://github.com/binarywang">Binary Wang</a>
  */
 @RestController
-@RequestMapping("/wx/user/{appid}")
+@RequestMapping("/wx/user")
 public class WxMaUserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
+    @Value("${wx.miniapp.configs[0].appid}")
+    private String appid;
 
     /**
      * 登陆接口
      */
     @GetMapping("/login")
-    public String login(@PathVariable String appid, String code) {
+    public String login(String code) {
         if (StringUtils.isBlank(code)) {
             return "empty jscode";
         }
@@ -54,8 +60,7 @@ public class WxMaUserController {
      * </pre>
      */
     @GetMapping("/info")
-    public String info(@PathVariable String appid, String sessionKey,
-                       String signature, String rawData, String encryptedData, String iv) {
+    public String info(String sessionKey,String signature, String rawData, String encryptedData, String iv) {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         // 用户信息校验
