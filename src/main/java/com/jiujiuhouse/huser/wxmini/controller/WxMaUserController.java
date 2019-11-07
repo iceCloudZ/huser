@@ -84,9 +84,9 @@ public class WxMaUserController {
         final WxMaService wxService = WxMaConfiguration.getMaService(appid);
 
         // 用户信息校验
-        if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
-            return "user check failed";
-        }
+//        if (!wxService.getUserService().checkUserInfo(sessionKey, rawData, signature)) {
+//            return "user check failed";
+//        }
 
         // 解密
         WxMaPhoneNumberInfo phoneNoInfo = wxService.getUserService().getPhoneNoInfo(sessionKey, encryptedData, iv);
