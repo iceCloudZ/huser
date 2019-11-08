@@ -2,6 +2,7 @@ package com.jiujiuhouse.huser.entity;
 
 import com.jiujiuhouse.huser.base.BaseEntity;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
  */
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "jj_profile")
 public class Profile extends BaseEntity {
 
