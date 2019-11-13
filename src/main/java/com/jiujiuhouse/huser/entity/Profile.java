@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 /**
+ * 用户表
  * @author zihao.zhao
  */
 @Data

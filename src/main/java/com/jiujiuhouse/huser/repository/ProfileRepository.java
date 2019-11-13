@@ -8,7 +8,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
  * @author zihao.zhao
  */
 @RepositoryRestResource
-public interface ProfileRepository extends JpaRepository<Profile, Long> {
+public interface ProfileRepository extends JpaRepository<Profile, Integer> {
 
     /**
      * 根据openId查询用户

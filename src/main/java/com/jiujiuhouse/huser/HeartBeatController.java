@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 
+/**
+ * 健康检查
+ * @author zihao.zhao
+ */
 @RestController
 @Slf4j
 public class HeartBeatController {
