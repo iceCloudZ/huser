@@ -73,6 +73,17 @@ public class HeartBeatController {
     @RequestMapping("/test")
     public String test() {
         log.info("hostname:{}", this.hostName);
-        return hresourceClient.getProfiles().toJSONString();
+        return hresourceClient.getTested();
+    }
+
+    /**
+     * 测试openfeign调用
+     *
+     * @return
+     */
+    @RequestMapping("/tested")
+    public String tested() {
+        log.info("hostname:{}", this.hostName);
+        return "huser被调用了" + "hostname:" + this.hostName;
     }
 }
