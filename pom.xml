@@ -35,12 +35,6 @@
             <version>1.0.4.RELEASE</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-kubernetes-discovery</artifactId>
-            <version>1.0.4.RELEASE</version>
-        </dependency>
-
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
