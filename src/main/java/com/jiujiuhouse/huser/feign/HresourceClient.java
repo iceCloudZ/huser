@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(name = "hresource", fallback = HresourceClientHystrix.class)
 public interface HresourceClient {
 
-    @GetMapping("/hresource/profiles")
+    @GetMapping("/hresource/houses")
     JSONObject getProfiles();
 }
