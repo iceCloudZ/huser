@@ -12,5 +12,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface HresourceClient {
 
     @GetMapping("/hresource/houses")
-    JSONObject getProfiles();
+    JSONObject getHouses();
 }

@@ -9,7 +9,7 @@ import com.jiujiuhouse.huser.feign.HresourceClient;
 public class HresourceClientHystrix implements HresourceClient {
 
     @Override
-    public JSONObject getProfiles() {
+    public JSONObject getHouses() {
         return JSONObject.parseObject("{err:'熔断了'}");
     }
 }
