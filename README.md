@@ -6,3 +6,6 @@
 * spring cloud kubernetes
 * spring data rest
 * postgreSQL
+
+## url
+/webjars/hal-explorer/0.11.0/index.html
