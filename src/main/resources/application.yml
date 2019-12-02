@@ -18,11 +18,3 @@ spring:
         temp:
           use_jdbc_metadata_defaults: false
         dialect: org.hibernate.dialect.PostgreSQL95Dialect
-wx:
-  miniapp:
-    configs:
-      - appid: wx8f114fa1bf96d8b7 #微信小程序的appid
-        secret: 042e7af56072f3cb6c3d2916e15f281f #微信小程序的Secret
-        token: zzhmsg #微信小程序消息服务器配置的token
-        aesKey: vhcC5TMpvGnkiUnbjTcHCtmWsL2CZRbstguiKGV2WYb #微信小程序消息服务器配置的EncodingAESKey
-        msgDataFormat: JSON
