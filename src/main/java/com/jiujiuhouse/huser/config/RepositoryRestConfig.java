@@ -23,7 +23,7 @@ public class RepositoryRestConfig {
                     RepositoryRestConfiguration config) {
                 final ClassPathScanningCandidateComponentProvider provider = new ClassPathScanningCandidateComponentProvider(false);
                 provider.addIncludeFilter(new AnnotationTypeFilter(Entity.class));
-                final Set<BeanDefinition> beans = provider.findCandidateComponents("com.jiujiuhouse");
+                final Set<BeanDefinition> beans = provider.findCandidateComponents("com.jiujiuhouse.huser.entity");
                 for (final BeanDefinition bean : beans) {
                     try {
                         config.exposeIdsFor(Class.forName(bean.getBeanClassName()));
