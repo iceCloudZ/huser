@@ -41,6 +41,9 @@ public class ProfileRequirement extends BaseEntity {
     @Column(name = "address_real", length = 512)
     private String addressReal;//实际
 
+    /**
+     * 门牌号
+     */
     @Column(name = "comment_address", length = 512)
     private String commentAddress;
 
@@ -48,13 +51,13 @@ public class ProfileRequirement extends BaseEntity {
      * 价格，单位为 元
      */
     @Column(name = "price")
-    private Integer rent;
+    private Integer price;
 
     /**
      * 面积，单位为dm2
      */
     @Column(name = "area")
-    private Integer useArea;
+    private Integer area;
 
     /**
      * 有房是否提醒
