@@ -23,30 +23,62 @@ public class ProfileRequirement extends BaseEntity {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "cust_name",columnDefinition="varchar(10) not null")
-    private String custName;//客户姓名
+    /**
+     * 用户id
+     */
+    @Column(name = "profile_id")
+    private Integer profileId;
 
-    @Column(name = "cust_phone",columnDefinition="varchar(11) not null")
-    private String custPhone;//客户电话
+    @Column(name = "profile_name", length = 128)
+    private String profileName;//客户姓名
 
-    @Column(name = "address_name",columnDefinition="varchar(50) not null")
-    private String address;//地址
+    @Column(name = "profile_phone", length = 11)
+    private String profilePhone;//客户电话
 
-    @Column(name = "address_real",columnDefinition="varchar(50) not null")
-    private String addressReal;//地址
+    @Column(name = "address_name", length = 512)
+    private String addressName;//地址名
 
-    @Column(name = "buildingFloorNum",columnDefinition="varchar(20)")
-    private String buildingFloorNum;
+    @Column(name = "address_real", length = 512)
+    private String addressReal;//实际
 
-    @Column(name = "rent",columnDefinition="varchar(20) not null")
-    private int rent;
+    @Column(name = "comment_address", length = 512)
+    private String commentAddress;
 
-    @Column(name = "useArea",columnDefinition="varchar(20) not null")
-    private String useArea;
+    /**
+     * 价格，单位为 元
+     */
+    @Column(name = "price")
+    private Integer rent;
 
+    /**
+     * 面积，单位为dm2
+     */
+    @Column(name = "area")
+    private Integer useArea;
 
+    /**
+     * 有房是否提醒
+     */
+    @Column(name = "notify")
+    private Boolean notify;
 
+    /**
+     * 用户需求类型
+     */
+    @Enumerated(EnumType.STRING)
+    @Column(name = "requirement_type")
+    private RequirementTypeEnum requirementType = RequirementTypeEnum.BUY;
 
+    public static enum RequirementTypeEnum {
+        /**
+         * 买房
+         */
+        BUY,
+        /**
+         * 租房
+         */
+        RENT
+    }
 
 
 }
