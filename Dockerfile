@@ -1,5 +1,5 @@
 #从基础镜像开始构建
-FROM registry.cn-shanghai.aliyuncs.com/quanwai_base/base:java8runtimeV2
+FROM openjdk:8u212-b04-jre-slim
 #设置环境变量
 # ENV JAVA_OPTS="$JAVA_OPTS -Xms256M -Xmx512M -XX:+AggressiveOpts -XX:+UseBiasedLocking -XX:+DisableExplicitGC -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:LargePageSizeInBytes=128m -XX:+UseCMSInitiatingOccupancyOnly -Djava.awt.headless=true -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:+PrintGCDateStamps -Xloggc:/data/applogs/kotler_gc.log -Djdk.tls.ephemeralDHKeySize=2048 -Djava.security.egd=file:/dev/./urandom"
 #将运行包复制到容器中
