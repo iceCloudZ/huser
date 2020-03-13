@@ -18,8 +18,8 @@ import javax.persistence.*;
 public class ProfileHouse extends BaseEntity {
 
     @Id
-    @SequenceGenerator(sequenceName = "profile_sequence", name = "seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+//    @SequenceGenerator(sequenceName = "profile_sequence", name = "seq")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     @Column(name = "id")
     private Integer id;
 

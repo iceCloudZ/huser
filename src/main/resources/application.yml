@@ -4,17 +4,17 @@ spring:
   application:
     name: huser
   datasource:
-    url: jdbc:mysql://172.17.0.16:3306/house?useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://sh-cynosdbmysql-grp-lpvk70oq.sql.tencentcdb.com:21186/house
     username: root
     password: Zzh320281
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
     initialization-mode: always
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        temp:
-          use_jdbc_metadata_defaults: false
+#    properties:
+#      hibernate:
+#        temp:
+#          use_jdbc_metadata_defaults: false
 #        dialect: org.hibernate.dialect.PostgreSQL95Dialect

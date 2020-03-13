@@ -18,8 +18,8 @@ import javax.persistence.*;
 public class ProfileRequirement extends BaseEntity {
 
     @Id//声明主键
-    @SequenceGenerator(sequenceName = "profile_requirement_sequence", name = "seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")//主键的生成策略
+//    @SequenceGenerator(sequenceName = "profile_requirement_sequence", name = "seq")
+//    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")//主键的生成策略
     @Column(name = "id")
     private Integer id;
 
