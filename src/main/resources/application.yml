@@ -4,7 +4,7 @@ spring:
   application:
     name: huser
   datasource:
-    url: jdbc:postgresql://172.17.0.16:3306/house
+    url: jdbc:mysql://172.17.0.16:3306/house
     username: root
     password: Zzh320281
     driverClassName: com.mysql.jdbc.Driver
