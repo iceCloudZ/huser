@@ -4,10 +4,10 @@ spring:
   application:
     name: huser
   datasource:
-    url: jdbc:postgresql://172.18.0.5:5432/postgres
-    username: postgres
-    password: postgres
-    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://172.17.0.16:3306/house
+    username: root
+    password: Zzh320281
+    driverClassName: com.mysql.jdbc.Driver
     initialization-mode: always
   jpa:
     show-sql: true
@@ -17,4 +17,4 @@ spring:
       hibernate:
         temp:
           use_jdbc_metadata_defaults: false
-        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+#        dialect: org.hibernate.dialect.PostgreSQL95Dialect
