@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 /**
- * @author zihao.zhao
+ * @author jie.qin
  */
 @RepositoryRestResource
 public interface ProfileRequirementRepository extends JpaRepository<ProfileRequirement, Integer> {
